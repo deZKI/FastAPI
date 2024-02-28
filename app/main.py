@@ -1,6 +1,6 @@
 import datetime
 
-from fastapi import FastAPI, Cookie, Response
+from fastapi import FastAPI, Response
 from fastapi.responses import FileResponse
 
 from .models.users import User
