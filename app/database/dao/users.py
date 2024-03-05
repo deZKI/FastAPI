@@ -1,4 +1,4 @@
-from app.dao.base import BaseDAO
+from app.database.dao.base import BaseDAO
 from app.database.models.users import Users
 
 
