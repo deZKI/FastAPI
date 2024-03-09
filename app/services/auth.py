@@ -36,7 +36,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     return encoded_jwt
 
 
-async def authenticate_user(telegram_id: int, password: str):
+async def authenticate_user(telegram_id: str, password: str):
     user = await UsersDAO.find_one_or_none(telegram_id=telegram_id)
     if not (user and verify_password(password, user.hashed_password)):
         raise IncorrectTelegramIdOrPasswordException

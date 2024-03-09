@@ -31,6 +31,11 @@ class UserIsNotPresentException(CustomException):
     status_code = status.HTTP_401_UNAUTHORIZED
 
 
+class UserIsNotAdminException(CustomException):
+    status_code = status.HTTP_403_FORBIDDEN
+    detail = "Пользователь не является админом"
+
+
 class TokenExpiredException(CustomException):
     status_code = status.HTTP_401_UNAUTHORIZED
     detail = "Срок действия токена истек"
