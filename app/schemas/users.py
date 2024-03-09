@@ -23,7 +23,7 @@ class SUserRegistration(SUserAuth):
     surname: str = Field(..., min_length=2, max_length=50)
     has_know_from: str = Field(..., max_length=100)
     church: str = Field(..., max_length=100)
-
+    age: int
     model_config = {
         "json_schema_extra": {
             "examples": [{
@@ -32,7 +32,8 @@ class SUserRegistration(SUserAuth):
                 "password": "Paswrodderef",
                 "telegram_id": "@derzki123",
                 "has_know_from": "from_friend",
-                "church": "LocalChurch"
+                "church": "LocalChurch",
+                "age": 20,
             }]
         }
     }

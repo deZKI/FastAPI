@@ -14,7 +14,7 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 
 from app.database.models import * # noqa  // Чтобы отслеживала все модели
-from app.core.config import settings  # noqa
+from app.config import settings  # noqa
 
 config = context.config
 
