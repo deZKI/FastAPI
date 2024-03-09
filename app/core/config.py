@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     LOG_LEVEL: int
 
     class Config:
-        env_file = ".env"
+        env_file = "app/.env"
 
 
 settings = Settings()
