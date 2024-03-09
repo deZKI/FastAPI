@@ -23,11 +23,11 @@ async def register_user(user_data: SUserRegistration):
         raise UserAlreadyExistsException
     plain_password = user_data.password.get_secret_value()
     hashed_password = get_password_hash(plain_password)
-    new_user = await UsersDAO.add(telegram_id=user_data.telegram_id, name=user_data.name,
-                                  surname=user_data.surname,
-                                  church=user_data.church,
-                                  age=user_data.age,
-                                  hashed_password=hashed_password)
+    new_user = await UsersDAO.add_with_qr_code(telegram_id=user_data.telegram_id, name=user_data.name,
+                                               surname=user_data.surname,
+                                               church=user_data.church,
+                                               age=user_data.age,
+                                               hashed_password=hashed_password)
     if not new_user:
         raise CannotAddDataToDatabase
 

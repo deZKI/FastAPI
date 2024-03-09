@@ -9,7 +9,7 @@ class CustomException(HTTPException):
 
 class UserAlreadyExistsException(CustomException):
     status_code = status.HTTP_409_CONFLICT
-    default_detail = "Пользователь уже существует"
+    detail = "Пользователь уже существует"
 
 
 class CannotAddDataToDatabase(CustomException):
